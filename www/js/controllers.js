@@ -109,7 +109,7 @@ angular.module('wodapp.controllers', [])
 			// percent array
 			percents = [];
 
-			// calculate percent table ca
+			// calculate percent table
 			percent = 95;
 			for (i = 2; i <= 20; i++) { 
 
