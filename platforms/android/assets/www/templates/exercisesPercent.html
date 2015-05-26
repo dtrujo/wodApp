@@ -1,0 +1,42 @@
+<ion-view cache-view="false" view-title="Percents">
+	<ion-nav-bar class="bar-dark">
+  		<ion-nav-back-button class="button-clear" >
+    		<i class="ion-back ion-chevron-left"></i>
+  		</ion-nav-back-button>
+	</ion-nav-bar>
+    <ion-content class="exercisesContainer">
+
+        <div class="divNoted">
+            <div class="itemContainer">
+                <div class="infoItem">
+                    <h3><strong>PR</strong>&nbsp; {{exercise.name}}</h3>
+                    <p><span>Last Attempt: </span>{{exercise.lastAttemptDate}}</p>
+                </div>
+                <div class="valueItem">
+                    <h3>{{exercise.pr}} Kg</h3>
+                    <p>200 lbs</p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+    	<ion-list show-delete="false" can-swipe="true">
+        <ion-refresher on-refresh="doRefresh()" spinner="spiral">
+         </ion-refresher>
+        	<ion-item ng-repeat="percent in percents">
+        		<div class="itemContainer">
+        			<div class="infoItem">
+        				<h3>{{percent.value}}</h3>
+        			</div>
+        			<div class="valueItem">
+        				<h3>{{percent.weight}} Kg</h3>
+        				<p>200 lbs</p>
+        			</div> 
+        		</div>
+                <ion-option-button class="button-light icon ion-ios-compose-outline options"></ion-option-button>
+                <ion-option-button ng-click="deleteExercise($index)" class="button-light icon ion-ios-trash-outline options"></ion-option-button>
+        	</ion-item>
+      	</ion-list>
+    </ion-content>
+    <button class="newExerciseButton" ng-click="newExercise()">+</button>
+</ion-view>
